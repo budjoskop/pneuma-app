@@ -7,11 +7,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: lightblue;
+    background: transparent;
     padding: 2rem 4%;
     z-index: 10;
+    transition: all .5s ease;
+    border-bottom: 1px solid transparent;
     @include breakpoint(desktop) {
         padding: 1rem 4%;
+    }
+
+    &.bg--white {
+        background: $color-white;
+        box-shadow: 0 0 1rem 0 rgba(0,0,0,0.1);
     }
 
     &__logo {
@@ -20,6 +27,7 @@
         flex-flow: row wrap;
         align-items: center;
         justify-content: space-between;
+        backface-visibility: hidden;
         @include breakpoint(overPhone) {
             width: 28%;
         }
@@ -41,6 +49,7 @@
         figcaption {
             font-family: $ff-main-semibold;
             @include font-size(45px,35px,30px);
+            color: $color-tundora;
         }
     }
 
@@ -58,7 +67,7 @@
             margin: auto;
             margin-bottom: 1.5rem;
             border-radius: 5rem;
-            background: $color-black;
+            background: $color-tundora;
 
             &:last-child {
                 margin-bottom: 0;

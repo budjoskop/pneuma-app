@@ -1,0 +1,8 @@
+.b-hero {
+    width: 100%;
+    height: 100rem;
+    background: radial-gradient(circle at 10% 10%, $color-french-pass, $color-dodger-blue);
+    @include breakpoint(overPhone) {
+        height: 90rem;
+    }
+}

@@ -1,22 +1,26 @@
 // ----- Typical module
 
-var $ = require('jquery');
+// var $ = require('jquery');
 
 module.exports = function() {
     // Main navigation
 
-    var $trigger = $('.b-header__burger'),
-        $nav = $('.c-nav'),
-        $close = $nav.find('.c-nav__close');
+    var windowWidth = window.innerWidth || document.documentElement.innerWidth,
+        body = document.querySelector('body'),
+        trigger = document.querySelector('.b-header__burger'),
+        nav = document.querySelector('.c-nav'),
+        close = nav.querySelector('.c-nav__close');
 
     function triggerHandler() {
-        $nav.slideDown(300);
+        nav.classList.add('active');
+        body.classList.add('fixed');
     }
 
     function closeHandler() {
-        $nav.slideUp(300);
+        nav.classList.remove('active');
+        body.classList.remove('fixed');
     }
 
-    $trigger.on('click', triggerHandler);
-    $close.on('click', closeHandler);
+    trigger.addEventListener('click', triggerHandler);
+    close.addEventListener('click', closeHandler);
 };

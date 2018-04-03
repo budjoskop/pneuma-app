@@ -700,6 +700,9 @@ body {
   .b-header.bg--white {
     background: #ffffff;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1); }
+    @media (min-width: 1025px) {
+      .b-header.bg--white {
+        padding: 0 4%; } }
   .b-header__logo {
     width: 40%;
     display: -webkit-box;
@@ -722,7 +725,8 @@ body {
         width: 28%; } }
     @media (min-width: 1025px) {
       .b-header__logo {
-        width: 13%; } }
+        width: 13%;
+        max-width: 16.5rem; } }
     .b-header__logo img {
       width: 38%; }
       @media (min-width: 768px) {

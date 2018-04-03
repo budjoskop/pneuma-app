@@ -19,6 +19,10 @@
     &.bg--white {
         background: $color-white;
         box-shadow: 0 0 1rem 0 rgba(0,0,0,0.1);
+
+        @include breakpoint(desktop) {
+            padding: 0 4%;
+        }
     }
 
     &__logo {
@@ -33,7 +37,7 @@
         }
         @include breakpoint(desktop) {
             width: 13%;
-
+            max-width: 16.5rem;
         }
 
         img {

@@ -1,10 +1,14 @@
 // ----- Main app file
 
+var $ = require('jquery');
+
 // ----- Path to main SCSS file
 var css = require('./scss/style.scss');
 
 // ----- Require modules here
-var testLog = require('./js/test/test.js');
+var nav = require('./js/nav/nav.js');
 
 // ----- Call modules here
-testLog();
+$(document).ready(function() {
+    nav();
+});

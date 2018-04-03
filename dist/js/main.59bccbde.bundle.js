@@ -1,1 +1,0 @@
-webpackJsonp([1],[function(n,o,t){"use strict";t(1);t(3)()},function(n,o){},,function(n,o,t){"use strict";n.exports=function(){console.log("Test log: app ready")}}],[0]);

@@ -12,7 +12,7 @@
 @include fontFace(SanFrancisco-Bold, SanFrancisco-Bold, normal, normal, otf);
 
 // ----- FONT FAMILY VARIBALE
-$fontDefault             : Arial, sans-serif;
+$fontDefault              : Arial, sans-serif;
 
 // ----- Examples
 // $ff == $font-family
@@ -23,7 +23,7 @@ $ff-main-semibold         : 'SanFrancisco-Semibold', $fontDefault;
 $ff-main-bold             : 'SanFrancisco-Bold', $fontDefault;
 
 //----- Font size
-$font-size-base         : 10px;
+$font-size-base           : 10px;
 
 // ----- GLOBAL FONT SETTINGS
 html {

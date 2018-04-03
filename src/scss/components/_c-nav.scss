@@ -1,0 +1,45 @@
+.c-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    color: $color-white;
+    background: rgba(0,0,0,0.8);
+
+    ul {
+        @include absolute(center);
+        @include font-size(45px,20px,18px);
+
+        li {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        right: 3rem;
+        top: 3rem;
+        width: 5rem;
+        height: 5rem;
+
+        &::before, &::after {
+            position: absolute;
+            top: -0.6rem;
+            left: 2.2rem;
+            content: ' ';
+            height: 6.4rem;
+            width: 2px;
+            background-color: $color-white;
+        }
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+}

@@ -1,3 +1,50 @@
 .b-header {
-    
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: lightblue;
+    padding: 2rem 4%;
+    z-index: 10;
+
+    &__logo {
+        width: 40%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            width: 38%;
+        }
+
+        figcaption {
+            @include font-size(45px,25px,25px);
+        }
+    }
+
+    &__burger {
+        // @include absolute(center-vertical);
+        // right: 3rem;
+        width: 8rem;
+        background: transparent;
+
+        & span {
+            display: block;
+            width: 80%;
+            height: 0.5rem;
+            margin: auto;
+            margin-bottom: 1.5rem;
+            border-radius: 5rem;
+            background: $color-black;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
 }

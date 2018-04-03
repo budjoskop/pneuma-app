@@ -10,6 +10,9 @@
     background: lightblue;
     padding: 2rem 4%;
     z-index: 10;
+    @include breakpoint(desktop) {
+        padding: 1rem 4%;
+    }
 
     &__logo {
         width: 40%;
@@ -17,21 +20,36 @@
         flex-flow: row wrap;
         align-items: center;
         justify-content: space-between;
+        @include breakpoint(overPhone) {
+            width: 28%;
+        }
+        @include breakpoint(desktop) {
+            width: 13%;
+
+        }
 
         img {
             width: 38%;
+            @include breakpoint(overPhone) {
+                width: 40%;
+            }
+            @include breakpoint(desktop) {
+                width: 42%;
+            }
         }
 
         figcaption {
-            @include font-size(45px,25px,25px);
+            font-family: $ff-main-semibold;
+            @include font-size(45px,35px,30px);
         }
     }
 
     &__burger {
-        // @include absolute(center-vertical);
-        // right: 3rem;
         width: 8rem;
         background: transparent;
+        @include breakpoint(overPhone) {
+            display: none;
+        }
 
         & span {
             display: block;

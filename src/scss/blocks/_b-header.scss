@@ -15,7 +15,7 @@
         padding: 2rem 4%;
         transition: all .5s ease;
         backface-visibility: hidden;
-        @include breakpoint(desktop) {
+        @include breakpoint(overPhone) {
             padding: 1rem 4%;
         }
     }

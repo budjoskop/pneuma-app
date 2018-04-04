@@ -12,6 +12,12 @@
         width: 100%;
         @include breakpoint(overPhone) {
             width: 45%;
+            order: 1;
+        }
+        @include breakpoint(desktop) {
+            width: 60%;
+            padding-top: 4rem;
+            padding-left: 1rem;
         }
 
         &__title {
@@ -24,6 +30,47 @@
         &__desc {
             @include font-size(35px,20px,20px);
             color: $color-tundora;
+            margin-bottom: 9rem;
+            @include breakpoint(overPhone) {
+                margin-bottom: 5rem;
+            }
+            @include breakpoint(desktop) {
+                margin-bottom: 10rem;
+            }
+        }
+    }
+
+    &__badges {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        a {
+            width: auto;
+            max-width: 24rem;
+            border-radius: 2rem;
+            @include breakpoint(overPhone) {
+                max-width: 20rem;
+            }
+            @include breakpoint(desktop) {
+                backface-visibility: hidden;
+                transform: translateY(0);
+                transition: all .3s ease;
+
+                &:hover {
+                    transform: translateY(-0.8rem);
+                    box-shadow: 0 1rem 1rem 0 rgba(0,0,0,0.6);
+                }
+            }
+
+            img {
+                width: 100%;
+            }
+
+            &:first-child {
+                margin-right: 1.5rem;
+            }
+
         }
     }
 
@@ -31,6 +78,10 @@
         width: 100%;
         @include breakpoint(overPhone) {
             width: 55%;
+            order: 2;
+        }
+        @include breakpoint(desktop) {
+            width: 40%;
         }
     }
 }

@@ -6,8 +6,9 @@
     left: 0;
     z-index: 15;
     background: rgba(0,0,0,0.8);
+    opacity: 0;
     transform: translateX(100%);
-    transition: transform .5s;
+    transition: all .5s;
     transition-timing-function: cubic-bezier(05,.89,.44,.59);
     backface-visibility: hidden;
     @include breakpoint(overPhone) {
@@ -15,11 +16,13 @@
         width: 45%;
         max-width: 32rem;
         background: transparent;
+        opacity: 1;
         transform: translateX(0);
     }
 
     &.active {
         transform: translateX(0);
+        opacity: 1;
     }
 
     &__list {

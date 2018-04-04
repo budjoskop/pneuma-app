@@ -578,11 +578,10 @@ a {
   left: 0;
   z-index: 15;
   background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
-  transition: -webkit-transform .5s;
-  transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s;
+  transition: all .5s;
   transition-timing-function: cubic-bezier(5, 0.89, 0.44, 0.59);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
@@ -592,11 +591,13 @@ a {
       width: 45%;
       max-width: 32rem;
       background: transparent;
+      opacity: 1;
       -webkit-transform: translateX(0);
               transform: translateX(0); } }
   .c-nav.active {
     -webkit-transform: translateX(0);
-            transform: translateX(0); }
+            transform: translateX(0);
+    opacity: 1; }
   .c-nav__list {
     position: absolute;
     top: 50%;

@@ -5,7 +5,7 @@ module.exports = function() {
         html = document.documentElement,
         header = document.querySelector('.b-header');
 
-    if (windowWidth < 1025) html.scrollTop > 80 ? header.classList.add('bg--white') : header.classList.remove('bg--white');
-    else html.scrollTop > 100 ? header.classList.add('bg--white') : header.classList.remove('bg--white');
+    if (windowWidth < 1025) window.pageYOffset > 80 ? header.classList.add('bg--white') : header.classList.remove('bg--white');
+    else window.pageYOffset > 100 ? header.classList.add('bg--white') : header.classList.remove('bg--white');
 
 };

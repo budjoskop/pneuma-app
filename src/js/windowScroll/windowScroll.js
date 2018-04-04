@@ -9,5 +9,5 @@ module.exports = function() {
         headerOnScroll();
     }
 
-    window.addEventListener('scroll', scrollHandler);
+    win.addEventListener('scroll', scrollHandler);
 };

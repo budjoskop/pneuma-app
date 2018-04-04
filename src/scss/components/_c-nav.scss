@@ -9,7 +9,7 @@
     opacity: 0;
     transform: translateX(100%);
     transition: all .5s;
-    transition-timing-function: cubic-bezier(05,.89,.44,.59);
+    transition-timing-function: cubic-bezier(.22,.44,.2,.98);
     backface-visibility: hidden;
     @include breakpoint(overPhone) {
         position: static;

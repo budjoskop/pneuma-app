@@ -4,25 +4,32 @@
     top: 0;
     left: 0;
     right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: transparent;
-    padding: 2rem 4%;
     z-index: 10;
     transition: all .5s ease;
-    border-bottom: 1px solid transparent;
-    @include breakpoint(desktop) {
-        padding: 1rem 4%;
+
+    .l {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: transparent;
+        padding: 2rem 4%;
+        transition: all .5s ease;
+        backface-visibility: hidden;
+        @include breakpoint(desktop) {
+            padding: 1rem 4%;
+        }
     }
 
     &.bg--white {
         background: $color-white;
         box-shadow: 0 0 1rem 0 rgba(0,0,0,0.1);
 
-        @include breakpoint(desktop) {
-            padding: 0 4%;
+        .l {
+            @include breakpoint(desktop) {
+                padding: 0 4%;
+            }
         }
+
     }
 
     &__logo {
@@ -53,7 +60,7 @@
         figcaption {
             font-family: $ff-main-semibold;
             @include font-size(45px,35px,30px);
-            color: $color-tundora;
+            color: $color-mine-shaft;
         }
     }
 

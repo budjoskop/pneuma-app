@@ -676,6 +676,21 @@ a {
 body {
   height: 3000px; }
 
+.c-section-title {
+  font-family: "SanFrancisco-Bold", Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 10rem 0; }
+  @media (max-width: 767px) {
+    .c-section-title {
+      font-size: 7.5rem; } }
+  @media (min-width: 768px) {
+    .c-section-title {
+      font-size: 6rem; } }
+  @media (min-width: 1025px) {
+    .c-section-title {
+      font-size: 6.5rem; } }
+
 @media (min-width: 768px) {
   .o-main {
     display: -webkit-box;
@@ -883,6 +898,10 @@ body {
     .b-hero {
       min-height: 95rem;
       padding: 20rem 0 10rem 0; } }
+
+.b-objects {
+  padding-top: 10rem;
+  padding-bottom: 10rem; }
 
 .u-animated {
   opacity: 0;

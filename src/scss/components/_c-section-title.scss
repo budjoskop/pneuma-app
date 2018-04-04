@@ -1,0 +1,7 @@
+.c-section-title {
+    font-family: $ff-main-bold;
+    @include font-size(75px,60px,65px);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 10rem 0;
+}

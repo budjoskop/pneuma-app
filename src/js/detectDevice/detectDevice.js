@@ -1,13 +1,13 @@
 var imgPath = require.context('../../assets/img/', true);
 var images = [
-    '1android-t.png',
-    '2android-t.png',
-    '3android-t.png',
-    '4android-t.png',
-    '1iphone-t.png',
-    '2iphone-t.png',
-    '3iphone-t.png',
-    '4iphone-t.png'
+    'android1.png',
+    'android2.png',
+    'android3.png',
+    'android4.png',
+    'iphone1.png',
+    'iphone2.png',
+    'iphone3.png',
+    'iphone4.png'
 ];
 
 var getImgs = () => images.map(name => `<img src='${imgPath(name, true)}' alt='${name}' />`);

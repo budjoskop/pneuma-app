@@ -15,8 +15,8 @@ var css = __webpack_require__(1);
 // ----- Require modules here
 var detectDevice = __webpack_require__(3);
 var windowScroll = __webpack_require__(18);
-var nav = __webpack_require__(20);
-var animationsHandler = __webpack_require__(21);
+var nav = __webpack_require__(21);
+var animationsHandler = __webpack_require__(22);
 
 // ----- Call modules here
 detectDevice();
@@ -39,7 +39,7 @@ animationsHandler();
 
 
 var imgPath = __webpack_require__(4);
-var images = ['1android-t.png', '2android-t.png', '3android-t.png', '4android-t.png', '1iphone-t.png', '2iphone-t.png', '3iphone-t.png', '4iphone-t.png'];
+var images = ['android1.png', 'android2.png', 'android3.png', 'android4.png', 'iphone1.png', 'iphone2.png', 'iphone3.png', 'iphone4.png'];
 
 var getImgs = function getImgs() {
     return images.map(function (name) {
@@ -84,17 +84,17 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./andoird/1android-t.png": 5,
-	"./andoird/2android-t.png": 6,
-	"./andoird/3android-t.png": 7,
-	"./andoird/4android-t.png": 8,
+	"./andoird/android1.png": 5,
+	"./andoird/android2.png": 6,
+	"./andoird/android3.png": 7,
+	"./andoird/android4.png": 8,
 	"./andoird/google-play-download-android-app.svg": 9,
 	"./andoird/playstore-badge.svg": 10,
-	"./iphone/1iphone-t.png": 11,
-	"./iphone/2iphone-t.png": 12,
-	"./iphone/3iphone-t.png": 13,
-	"./iphone/4iphone-t.png": 14,
-	"./iphone/appstore-badge.svg": 15,
+	"./iphone/appstore-badge.svg": 11,
+	"./iphone/iphone1.png": 12,
+	"./iphone/iphone2.png": 13,
+	"./iphone/iphone3.png": 14,
+	"./iphone/iphone4.png": 15,
 	"./klaber-logo.png": 16,
 	"./klaber.png": 17
 };
@@ -118,25 +118,25 @@ webpackContext.id = 4;
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/1android-t.png";
+module.exports = __webpack_require__.p + "assets/img/android1.png";
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/2android-t.png";
+module.exports = __webpack_require__.p + "assets/img/android2.png";
 
 /***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/3android-t.png";
+module.exports = __webpack_require__.p + "assets/img/android3.png";
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/4android-t.png";
+module.exports = __webpack_require__.p + "assets/img/android4.png";
 
 /***/ }),
 /* 9 */
@@ -154,31 +154,31 @@ module.exports = __webpack_require__.p + "assets/img/playstore-badge.svg";
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/1iphone-t.png";
+module.exports = __webpack_require__.p + "assets/img/appstore-badge.svg";
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/2iphone-t.png";
+module.exports = __webpack_require__.p + "assets/img/iphone1.png";
 
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/3iphone-t.png";
+module.exports = __webpack_require__.p + "assets/img/iphone2.png";
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/4iphone-t.png";
+module.exports = __webpack_require__.p + "assets/img/iphone3.png";
 
 /***/ }),
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/appstore-badge.svg";
+module.exports = __webpack_require__.p + "assets/img/iphone4.png";
 
 /***/ }),
 /* 16 */
@@ -199,18 +199,24 @@ module.exports = __webpack_require__.p + "assets/img/klaber.png";
 "use strict";
 
 
-var headerOnScroll = __webpack_require__(19);
+var headerOnScroll = __webpack_require__(19),
+    checkIfInView = __webpack_require__(20);
 
 module.exports = function () {
     // Window scroll handler
 
-    var win = window;
+    var objectsBlock = document.querySelector('.b-objects'),
+        toAnimate = objectsBlock.querySelectorAll('.u-animated');
 
     function scrollHandler() {
         headerOnScroll();
+
+        for (var i = 0; i < toAnimate.length; i++) {
+            checkIfInView(toAnimate[i], 'in--view');
+        }
     }
 
-    win.addEventListener('scroll', scrollHandler);
+    window.addEventListener('scroll', scrollHandler);
 };
 
 /***/ }),
@@ -232,6 +238,25 @@ module.exports = function () {
 
 /***/ }),
 /* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (element, classToAdd) {
+    // check if element is in view
+
+    var win = window,
+        winBottom = win.pageYOffset + win.innerHeight,
+        elementTop = element.offsetTop;
+
+    if (winBottom - 200 > elementTop) {
+        element.classList.add(classToAdd);
+    }
+};
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -265,7 +290,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

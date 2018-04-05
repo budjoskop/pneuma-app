@@ -8,4 +8,16 @@
         min-height: 95rem;
         padding: 20rem 0 10rem 0;
     }
+
+    .o-main {
+        &__text__desc {
+            margin-bottom: 9rem;
+            @include breakpoint(overPhone) {
+                margin-bottom: 5rem;
+            }
+            @include breakpoint(desktop) {
+                margin-bottom: 10rem;
+            }
+        }
+    }
 }

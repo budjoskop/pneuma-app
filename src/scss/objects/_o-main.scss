@@ -10,6 +10,7 @@
 
     &__text {
         width: 100%;
+        margin-bottom: 9rem;
         @include breakpoint(overPhone) {
             width: 45%;
             order: 1;
@@ -30,13 +31,6 @@
         &__desc {
             @include font-size(35px,20px,20px);
             color: $color-tundora;
-            margin-bottom: 9rem;
-            @include breakpoint(overPhone) {
-                margin-bottom: 5rem;
-            }
-            @include breakpoint(desktop) {
-                margin-bottom: 10rem;
-            }
         }
     }
 
@@ -77,11 +71,11 @@
     &__img {
         width: 100%;
         @include breakpoint(overPhone) {
-            width: 55%;
+            width: 45%;
             order: 2;
         }
         @include breakpoint(desktop) {
-            width: 40%;
+            width: 30%;
         }
     }
 }

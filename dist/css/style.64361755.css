@@ -529,7 +529,10 @@ a img, button {
   src: url(../assets/fonts/SanFrancisco-Bold.otf) format("opentype"); }
 
 html {
-  font-size: 10px; }
+  font-size: 10px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; }
   @media (max-width: 767px) {
     html {
       font-size: 1.5625vw; } }
@@ -708,7 +711,8 @@ body {
             justify-content: space-between; } }
 
 .o-main__text {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 9rem; }
   @media (min-width: 768px) {
     .o-main__text {
       width: 45%;
@@ -734,8 +738,7 @@ body {
       .o-main__text__title {
         font-size: 3rem; } }
   .o-main__text__desc {
-    color: #474747;
-    margin-bottom: 9rem; }
+    color: #474747; }
     @media (max-width: 767px) {
       .o-main__text__desc {
         font-size: 3.5rem; } }
@@ -745,12 +748,6 @@ body {
     @media (min-width: 1025px) {
       .o-main__text__desc {
         font-size: 2rem; } }
-    @media (min-width: 768px) {
-      .o-main__text__desc {
-        margin-bottom: 5rem; } }
-    @media (min-width: 1025px) {
-      .o-main__text__desc {
-        margin-bottom: 10rem; } }
 
 .o-main__badges {
   width: 100%;
@@ -787,13 +784,13 @@ body {
   width: 100%; }
   @media (min-width: 768px) {
     .o-main__img {
-      width: 55%;
+      width: 45%;
       -webkit-box-ordinal-group: 3;
           -ms-flex-order: 2;
               order: 2; } }
   @media (min-width: 1025px) {
     .o-main__img {
-      width: 40%; } }
+      width: 30%; } }
 
 .b-header {
   width: 100%;
@@ -898,10 +895,20 @@ body {
     .b-hero {
       min-height: 95rem;
       padding: 20rem 0 10rem 0; } }
+  .b-hero .o-main__text__desc {
+    margin-bottom: 9rem; }
+    @media (min-width: 768px) {
+      .b-hero .o-main__text__desc {
+        margin-bottom: 5rem; } }
+    @media (min-width: 1025px) {
+      .b-hero .o-main__text__desc {
+        margin-bottom: 10rem; } }
 
 .b-objects {
   padding-top: 10rem;
   padding-bottom: 10rem; }
+  .b-objects .o-main {
+    margin-bottom: 15rem; }
 
 .u-animated {
   opacity: 0;

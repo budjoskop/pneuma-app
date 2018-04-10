@@ -45,6 +45,7 @@
         @include breakpoint(desktop) {
             width: 13%;
             max-width: 16.5rem;
+            cursor: default;
         }
 
         img {

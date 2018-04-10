@@ -23,13 +23,17 @@
 
         &__title {
             font-family: $ff-main-bold;
-            @include font-size(60px,30px,30px);
-            margin-bottom: 1.5rem;
+            @include font-size(70px,45px,50px);
+            margin-bottom: 3.5rem;
             color: $color-mine-shaft;
+            @include breakpoint(overPhone) {
+                margin-bottom: 3rem;
+            }
         }
 
         &__desc {
-            @include font-size(35px,20px,20px);
+            @include font-size(35px,22px,25px);
+            @include line-height(40px,28px,30px);
             color: $color-tundora;
         }
     }

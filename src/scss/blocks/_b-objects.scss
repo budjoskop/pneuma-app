@@ -1,14 +1,15 @@
 .b-objects {
-    padding-top: 10rem;
+    padding-top: 15rem;
     padding-bottom: 10rem;
     @include breakpoint(desktop) {
         padding: 10rem 25rem;
     }
 
     .o-main {
-        margin-bottom: 15rem;
+        margin-bottom: 20rem;
         @include breakpoint(overPhone) {
             align-items: center;
+            margin-bottom: 15rem;
         }
 
         &:last-child {

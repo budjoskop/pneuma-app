@@ -1,9 +1,13 @@
-module.exports = function(element, destination) {
+module.exports = function(trigger, dest) {
     // Smooth scrolling
+
+    var windowWidth = window.innerWidth,
+        body = document.querySelector('body'),
+        nav = document.querySelector('.c-nav');
 
     function smoothScroll(destination, duration = 200, easing = 'linear', callback) {
 
-        const easings = {
+        var easings = {
             linear(t) {
                 return t;
             },
@@ -45,13 +49,13 @@ module.exports = function(element, destination) {
             }
         };
 
-        const start = window.pageYOffset;
-        const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+        var start = window.pageYOffset;
+        var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
 
-        const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-        const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
-        const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
+        var documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+        var destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
+        var destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
 
         if ('requestAnimationFrame' in window === false) {
             window.scroll(0, destinationOffsetToScroll);
@@ -62,9 +66,9 @@ module.exports = function(element, destination) {
         }
 
         function scroll() {
-            const now = 'now' in window.performance ? performance.now() : new Date().getTime();
-            const time = Math.min(1, ((now - startTime) / duration));
-            const timeFunction = easings[easing](time);
+            var now = 'now' in window.performance ? performance.now() : new Date().getTime();
+            var time = Math.min(1, ((now - startTime) / duration));
+            var timeFunction = easings[easing](time);
             window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
 
             if (window.pageYOffset === destinationOffsetToScroll) {
@@ -80,12 +84,19 @@ module.exports = function(element, destination) {
         scroll();
     }
 
-    element.addEventListener('click', () => {
+    // possible to add a callback function, after easing func
+    trigger.addEventListener('click', () => {
         smoothScroll(
-            destination,
+            dest,
             800,
             'easeInOutQuart'
         );
+
+        // close nav when clicking on any item
+        if (windowWidth < 768) {
+            nav.classList.remove('active');
+            body.classList.remove('fixed');
+        }
     });
 
 };

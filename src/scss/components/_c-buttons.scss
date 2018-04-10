@@ -1,4 +1,14 @@
 // ----- Buttons
 .c-btn {
+    display: inline-block;
+    background: $color-white;
+    padding: 2rem 3rem;
+    color: $color-tundora;
+    @include font-size(35px,25px,25px);
+    border-radius: 1rem;
 
+    &--wrap {
+        text-align: center;
+        margin-bottom: 10rem;
+    }
 }

@@ -43,6 +43,16 @@ body {
     }
 }
 
+// text selection
+::selection {
+  background: $color-mine-shaft; /* WebKit/Blink Browsers */
+  color: $color-white;
+}
+::-moz-selection {
+  background: $color-mine-shaft; /* Gecko Browsers */
+  color: $color-white;
+}
+
 h1 {}
 h2 {}
 a {

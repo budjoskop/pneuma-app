@@ -86,4 +86,21 @@
             transform: rotate(-45deg);
         }
     }
+
+    &__social {
+        @include absolute(center-horizontal);
+        bottom: 10rem;
+        width: 100%;
+        padding: 0 10rem;
+        text-align: center;
+
+        & a {
+            display: inline-block;
+            width: 20%;
+
+            &:first-child {
+                margin-right: 10rem;
+            }
+        }
+    }
 }

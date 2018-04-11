@@ -10,5 +10,8 @@
     &--wrap {
         text-align: center;
         margin-bottom: 10rem;
+        @include breakpoint(overPhone) {
+            margin-bottom: 5rem;
+        }
     }
 }

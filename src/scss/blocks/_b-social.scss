@@ -1,0 +1,28 @@
+.b-social {
+    padding-bottom: 10rem;
+
+    &__icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 3rem;
+    }
+
+    &__icon {
+        width: 40%;
+        @include breakpoint(overPhone) {
+            width: 20%;
+        }
+
+        &:first-child {
+            margin-right: 5rem;
+            @include breakpoint(overPhone) {
+                margin-right: 3rem;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}

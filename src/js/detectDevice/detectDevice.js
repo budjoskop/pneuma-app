@@ -4,10 +4,11 @@ var images = [
     'android2.png',
     'android3.png',
     'android4.png',
-    'iphone1.png',
-    'iphone2.png',
-    'iphone3.png',
-    'iphone4.png'
+    'pneuma1.png',
+    'pneuma2.png',
+    'pneuma3.png',
+    'pneuma4.png',
+    'pneuma5.png'
 ];
 
 var getImgs = () => images.map(name => `<img src='${imgPath(name, true)}' alt='${name}' />`);

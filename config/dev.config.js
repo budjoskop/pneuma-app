@@ -104,11 +104,13 @@ module.exports = {
             title: 'Webpack App',
             filename: 'index.html',
             template: 'src/index.html',
+            favicon: "./src/assets/favicon/favicon.ico"
+
             // alwaysWriteToDisk: true
         }),
         new WebpackBuildNotifierPlugin({
             title: "Webpack",
             suppressSuccess: false
-        })
+        }),
     ]
 };

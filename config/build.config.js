@@ -120,6 +120,7 @@ module.exports = {
             title: 'Webpack App',
             filename: 'index.html',
             template: './src/index.html',
+            favicon: "./src/assets/favicon/favicon.ico",
             minify: {
                 removeAttributeQuotes: true,
                 collapseWhitespace: true
